@@ -1,0 +1,15 @@
+E:\New Rover code\ServerLib\bin\Debug\ServerLib.dll
+E:\New Rover code\ServerLib\bin\Debug\ServerLib.pdb
+E:\New Rover code\ServerLib\obj\Debug\ServerLib.csprojResolveAssemblyReference.cache
+E:\New Rover code\ServerLib\obj\Debug\ServerLib.dll
+E:\New Rover code\ServerLib\obj\Debug\ServerLib.pdb
+E:\New Rover code - Copy\ServerLib\bin\Debug\ServerLib.dll
+E:\New Rover code - Copy\ServerLib\bin\Debug\ServerLib.pdb
+E:\New Rover code - Copy\ServerLib\obj\Debug\ServerLib.csprojResolveAssemblyReference.cache
+E:\New Rover code - Copy\ServerLib\obj\Debug\ServerLib.dll
+E:\New Rover code - Copy\ServerLib\obj\Debug\ServerLib.pdb
+E:\Rover Work\ROVER-final\ServerLib\bin\Debug\ServerLib.dll
+E:\Rover Work\ROVER-final\ServerLib\bin\Debug\ServerLib.pdb
+E:\Rover Work\ROVER-final\ServerLib\obj\Debug\ServerLib.csprojResolveAssemblyReference.cache
+E:\Rover Work\ROVER-final\ServerLib\obj\Debug\ServerLib.dll
+E:\Rover Work\ROVER-final\ServerLib\obj\Debug\ServerLib.pdb

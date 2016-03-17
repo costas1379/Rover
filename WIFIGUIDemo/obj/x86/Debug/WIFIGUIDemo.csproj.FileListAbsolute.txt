@@ -1,0 +1,55 @@
+N:\My Documents\ROVER-final sels\WIFIGUIDemo\bin\Debug\WIFIGUIDemo.exe
+N:\My Documents\ROVER-final sels\WIFIGUIDemo\bin\Debug\WIFIGUIDemo.pdb
+N:\My Documents\ROVER-final sels\WIFIGUIDemo\bin\Debug\ServerLib.dll
+N:\My Documents\ROVER-final sels\WIFIGUIDemo\bin\Debug\ServerLib.pdb
+N:\My Documents\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.csprojResolveAssemblyReference.cache
+N:\My Documents\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.inputDialog.resources
+N:\My Documents\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.Main.resources
+N:\My Documents\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.Properties.Resources.resources
+N:\My Documents\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.csproj.GenerateResource.Cache
+N:\My Documents\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.exe
+N:\My Documents\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.pdb
+D:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.exe
+D:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.pdb
+D:\ROVER-final sels\WIFIGUIDemo\bin\Debug\WIFIGUIDemo.exe
+D:\ROVER-final sels\WIFIGUIDemo\bin\Debug\WIFIGUIDemo.pdb
+D:\ROVER-final sels\WIFIGUIDemo\bin\Debug\ServerLib.dll
+D:\ROVER-final sels\WIFIGUIDemo\bin\Debug\ServerLib.pdb
+D:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.csprojResolveAssemblyReference.cache
+D:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.inputDialog.resources
+D:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.Main.resources
+D:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.Properties.Resources.resources
+D:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.csproj.GenerateResource.Cache
+E:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.exe
+E:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.pdb
+E:\ROVER-final sels\WIFIGUIDemo\bin\Debug\WIFIGUIDemo.exe
+E:\ROVER-final sels\WIFIGUIDemo\bin\Debug\WIFIGUIDemo.pdb
+E:\ROVER-final sels\WIFIGUIDemo\bin\Debug\ServerLib.dll
+E:\ROVER-final sels\WIFIGUIDemo\bin\Debug\ServerLib.pdb
+E:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.csprojResolveAssemblyReference.cache
+E:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.inputDialog.resources
+E:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.Main.resources
+E:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.Properties.Resources.resources
+E:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.csproj.GenerateResource.Cache
+F:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.exe
+F:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.pdb
+F:\ROVER-final sels\WIFIGUIDemo\bin\Debug\WIFIGUIDemo.exe
+F:\ROVER-final sels\WIFIGUIDemo\bin\Debug\WIFIGUIDemo.pdb
+F:\ROVER-final sels\WIFIGUIDemo\bin\Debug\ServerLib.dll
+F:\ROVER-final sels\WIFIGUIDemo\bin\Debug\ServerLib.pdb
+F:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.csprojResolveAssemblyReference.cache
+F:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.inputDialog.resources
+F:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.Main.resources
+F:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.Properties.Resources.resources
+F:\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.csproj.GenerateResource.Cache
+C:\Users\Costas\Desktop\Rover\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.exe
+C:\Users\Costas\Desktop\Rover\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.pdb
+C:\Users\Costas\Desktop\Rover\ROVER-final sels\WIFIGUIDemo\bin\Debug\WIFIGUIDemo.exe
+C:\Users\Costas\Desktop\Rover\ROVER-final sels\WIFIGUIDemo\bin\Debug\WIFIGUIDemo.pdb
+C:\Users\Costas\Desktop\Rover\ROVER-final sels\WIFIGUIDemo\bin\Debug\ServerLib.dll
+C:\Users\Costas\Desktop\Rover\ROVER-final sels\WIFIGUIDemo\bin\Debug\ServerLib.pdb
+C:\Users\Costas\Desktop\Rover\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.csprojResolveAssemblyReference.cache
+C:\Users\Costas\Desktop\Rover\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.inputDialog.resources
+C:\Users\Costas\Desktop\Rover\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.Main.resources
+C:\Users\Costas\Desktop\Rover\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.Properties.Resources.resources
+C:\Users\Costas\Desktop\Rover\ROVER-final sels\WIFIGUIDemo\obj\x86\Debug\WIFIGUIDemo.csproj.GenerateResource.Cache

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -974,7 +974,7 @@ namespace WIFIGUIDemo
 
               
                */
-           //updown path 5o angle forward /backward
+     /*?      //updown path 5o angle forward /backward
            
             if (li < 30)
             {
@@ -1044,9 +1044,48 @@ namespace WIFIGUIDemo
             }
             li += 1;
 
+*/
+//light path using go distance 
+if (li<1){
+    godistance(110);
 
-
-
+}else if(li<35){
+    //read light sensors
+}else if(li<37){
+    setmotorspeed(-70,70);
+}else if (li<38){
+    setmotorspeed(0,0);
+}else if(li<39){
+    godistance(-10);
+}else if(li<46){
+    //do nothing
+}else if (li<48){
+    setmotorspeed(70,-70);
+}else if(li<49){
+    setmotorspeed(0,0);
+}else if(li<50){
+    godistance(-110);
+}else if(li<85){
+    //read light sensors
+}else if(li<86){
+    setmotorspeed(0,0);
+}else if(li<88){
+    setmotorspeed(70,-70);
+}else if (li<89){
+    setmotorspeed(0,0);
+}else if (li<90){
+    godistance(10);
+}else if (li<98){
+    //do nothing
+}else if (li<100){
+    setmotorspeed(-70,70);
+}else if(li<101){
+    setmotorspeed(0,0);
+}else {
+    li=-1;
+}
+li+=1;
+   
 
 
         }

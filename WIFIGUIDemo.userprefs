@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="WIFIGUIDemo/WIFIGUIDemo.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="WIFIGUIDemo/inputDialog.cs">
+    <Files>
+      <File FileName="WIFIGUIDemo/Main.cs" Line="1" Column="1" />
+      <File FileName="WIFIGUIDemo/Main.Designer.cs" Line="23" Column="9" />
+      <File FileName="ServerLib/Common.cs" Line="13" Column="6" />
+      <File FileName="WIFIGUIDemo/Program.cs" Line="1" Column="1" />
+      <File FileName="../../../../../usr/lib/mono/4.5/Microsoft.Common.targets" Line="1" Column="1" />
+      <File FileName="WIFIGUIDemo/ActionGroup.cs" Line="5" Column="44" />
+      <File FileName="WIFIGUIDemo/inputDialog.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

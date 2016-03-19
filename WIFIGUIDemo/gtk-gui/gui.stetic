@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <action-group name="WIFIGUIDemo.ActionGroup">
+    <action id="testAction">
+      <property name="Type">Action</property>
+      <property name="Label" translatable="yes">test</property>
+      <property name="ShortLabel" translatable="yes">test</property>
+    </action>
+  </action-group>
+</stetic-interface>

@@ -69,7 +69,12 @@ namespace WIFIGUIDemo
         int x_min = 30000;
         int y_min = 30000;
         int z_min = 30000;
-
+        int LightReading1 = 0;
+        int LightReading2 = 0;
+        int lx1=0,lx2=0,ly1=0,ly2=0;
+        int[] lightar1={0,0,0};
+        int lightar2={0,0,0};
+        int lightarc=0;
         //
         int timerAngle = 0;
         double timermaga =0;
@@ -213,6 +218,26 @@ namespace WIFIGUIDemo
                             Option_1_HandleUSGPSReply(NewData);         // This executes Option 1
                             //Option_2_HandleUSGPSReply(NewData);         // This executes Option 2
                         }));
+                        break;
+                     //photo diode
+                        
+                     case (byte)CommandID.CMDRDlightsensors:
+                        {
+
+                            LightReading1 = (short)(NewData[4] << 8 | NewData[5]);
+                            LightReading2 = (short)(NewData[6] << 8 | NewData[7]);
+                            flag_LightData = true;
+
+
+                            this.BeginInvoke(new EventHandler(delegate
+                                {
+
+                                   // label10.Text = LightReading1.ToString();
+                                    //label11.Text = LightReading2.ToString();
+
+
+                                }));
+                        }
                         break;
                     case (byte)CommandID.CMDREADMag:
                         {
@@ -1046,11 +1071,28 @@ namespace WIFIGUIDemo
 
 */
 //light path using go distance 
-if (li<1){
+
+Graphics g = lightPnl.CreateGraphics();
+Pen myPen1 = new Pen(myColour1, 10);
+Pen myPen2 = new Pen(myColour2, 10);
+Color myColour1 = Color.FromArgb(LightReading1, LightReading1, LightReading1);
+Color myColour2 = Color.FromArgb(LightReading2, LightReading2, LightReading2);
+
+if(li<0){
+
     godistance(110);
 
+ly1=400;
+ly2=390;
+lx1+=10;
+lx2+=10;
 }else if(li<35){
     //read light sensors
+    lightar1[lightarc]=LightReading1;
+    lightar2[lightarc]=LightReading2;
+     g.DrawLine(myPen1, lx1, ly1, x2, y2);
+     ly1-=10;
+     ly2-=10;
 }else if(li<37){
     setmotorspeed(-70,70);
 }else if (li<38){
@@ -1065,8 +1107,14 @@ if (li<1){
     setmotorspeed(0,0);
 }else if(li<50){
     godistance(-110);
+    lx1+=10;
+    lx2+=10;
 }else if(li<85){
-    //read light sensors
+   lightar1[lightarc]=LightReading1;
+    lightar2[lightarc]=LightReading2;
+     g.DrawLine(myPen1, lx1, ly1, x2, y2);
+     ly1+=10;
+     ly2+=10;
 }else if(li<86){
     setmotorspeed(0,0);
 }else if(li<88){
@@ -1085,6 +1133,7 @@ if (li<1){
     li=-1;
 }
 li+=1;
+lightarc+=1;
    
 
 

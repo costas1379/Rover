@@ -120,6 +120,42 @@
   <metadata name="tmrmotorpos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        SUVORK5CYII=
+</value>
+  </data>
   <metadata name="tmrangle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>141, 17</value>
   </metadata>
@@ -129,7 +165,6 @@
   <metadata name="tmrearthquake.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>349, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="panel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAIAAAD2HxkiAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -206,7 +241,13 @@
   <metadata name="chrtTmr.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>481, 17</value>
   </metadata>
+  <metadata name="tmraccelerometer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <metadata name="teeterTmr.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>165, 56</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>66</value>
+    <value>75</value>
   </metadata>
 </root>

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmdDisconnect = new System.Windows.Forms.Button();
@@ -81,12 +81,46 @@
             this.tmrmotorpos = new System.Windows.Forms.Timer(this.components);
             this.Rotation = new System.Windows.Forms.TabControl();
             this.tabVortex = new System.Windows.Forms.TabPage();
+            this.btnorientexitvortex = new System.Windows.Forms.Button();
+            this.btnexitvortex = new System.Windows.Forms.Button();
+            this.btnentervortex = new System.Windows.Forms.Button();
+            this.btnorientvortexon = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chrtReset = new System.Windows.Forms.Button();
             this.chartStop = new System.Windows.Forms.Button();
             this.chartStart = new System.Windows.Forms.Button();
             this.tabTeeter = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbllengthHval2 = new System.Windows.Forms.Label();
+            this.lbllengthHval = new System.Windows.Forms.Label();
+            this.lbllengthCval = new System.Windows.Forms.Label();
+            this.lbllengthAval = new System.Windows.Forms.Label();
+            this.lblangleMval = new System.Windows.Forms.Label();
+            this.lbllengthA = new System.Windows.Forms.Label();
+            this.lblangleM = new System.Windows.Forms.Label();
+            this.lbllengthC = new System.Windows.Forms.Label();
+            this.lnllengthH = new System.Windows.Forms.Label();
+            this.lbllengthF = new System.Windows.Forms.Label();
+            this.lbllengthFval = new System.Windows.Forms.Label();
+            this.btncalcteeter = new System.Windows.Forms.Button();
+            this.txtdeclineangle = new System.Windows.Forms.TextBox();
+            this.txtinclineangle = new System.Windows.Forms.TextBox();
+            this.btnstoredeclineangle = new System.Windows.Forms.Button();
+            this.btnstoreinclneangle = new System.Windows.Forms.Button();
+            this.chkaccel = new System.Windows.Forms.CheckBox();
+            this.lblAccelyG = new System.Windows.Forms.Label();
+            this.lblAccelxG = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.LblAccelY = new System.Windows.Forms.Label();
+            this.LblAccelX = new System.Windows.Forms.Label();
+            this.btnorientteeter = new System.Windows.Forms.Button();
             this.tabearthquake = new System.Windows.Forms.TabPage();
+            this.btnselsafterearthquake = new System.Windows.Forms.Button();
+            this.btnexitearthquake = new System.Windows.Forms.Button();
+            this.btnenterearthquake = new System.Windows.Forms.Button();
+            this.btnorientearthquake = new System.Windows.Forms.Button();
             this.btnclearsamples = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.lbletimercycles = new System.Windows.Forms.Label();
@@ -148,23 +182,53 @@
             this.lblcoordY = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picRover = new System.Windows.Forms.PictureBox();
+            this.picmorseaproach = new System.Windows.Forms.PictureBox();
+            this.picvortex = new System.Windows.Forms.PictureBox();
+            this.picearthquake = new System.Windows.Forms.PictureBox();
+            this.picimage = new System.Windows.Forms.PictureBox();
+            this.pictteeteraproach = new System.Windows.Forms.PictureBox();
+            this.picteeter = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.chrtTmr = new System.Windows.Forms.Timer(this.components);
-            this.stopPthBtn = new System.Windows.Forms.Button();
+            this.btncalculatepath = new System.Windows.Forms.Button();
+            this.txtxwanted = new System.Windows.Forms.TextBox();
+            this.txtywanted = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txttravelangle = new System.Windows.Forms.TextBox();
+            this.txttraveldistance = new System.Windows.Forms.TextBox();
+            this.btnturntravel = new System.Windows.Forms.Button();
+            this.btntravelgo = new System.Windows.Forms.Button();
+            this.tmraccelerometer = new System.Windows.Forms.Timer(this.components);
+            this.chkturning = new System.Windows.Forms.CheckBox();
+            this.chktravelling = new System.Windows.Forms.CheckBox();
+            this.teeterTmr = new System.Windows.Forms.Timer(this.components);
+            this.stopPth = new System.Windows.Forms.Button();
+            this.lighttxt2 = new System.Windows.Forms.TextBox();
+            this.spinslbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.Rotation.SuspendLayout();
             this.tabVortex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.tabTeeter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabearthquake.SuspendLayout();
             this.tablights.SuspendLayout();
             this.tabtesting.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRover)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picmorseaproach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picvortex)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picearthquake)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picimage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictteeteraproach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picteeter)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -640,6 +704,11 @@
             // 
             // tabVortex
             // 
+            this.tabVortex.Controls.Add(this.spinslbl);
+            this.tabVortex.Controls.Add(this.btnorientexitvortex);
+            this.tabVortex.Controls.Add(this.btnexitvortex);
+            this.tabVortex.Controls.Add(this.btnentervortex);
+            this.tabVortex.Controls.Add(this.btnorientvortexon);
             this.tabVortex.Controls.Add(this.chart1);
             this.tabVortex.Controls.Add(this.chrtReset);
             this.tabVortex.Controls.Add(this.chartStop);
@@ -652,40 +721,80 @@
             this.tabVortex.Text = "Spiral Vortex";
             this.tabVortex.UseVisualStyleBackColor = true;
             // 
+            // btnorientexitvortex
+            // 
+            this.btnorientexitvortex.Location = new System.Drawing.Point(348, 371);
+            this.btnorientexitvortex.Name = "btnorientexitvortex";
+            this.btnorientexitvortex.Size = new System.Drawing.Size(100, 21);
+            this.btnorientexitvortex.TabIndex = 60;
+            this.btnorientexitvortex.Text = "Orient to exit";
+            this.btnorientexitvortex.UseVisualStyleBackColor = true;
+            this.btnorientexitvortex.Click += new System.EventHandler(this.btnorientexitvortex_Click);
+            // 
+            // btnexitvortex
+            // 
+            this.btnexitvortex.Location = new System.Drawing.Point(348, 400);
+            this.btnexitvortex.Name = "btnexitvortex";
+            this.btnexitvortex.Size = new System.Drawing.Size(100, 21);
+            this.btnexitvortex.TabIndex = 59;
+            this.btnexitvortex.Text = "Drive down";
+            this.btnexitvortex.UseVisualStyleBackColor = true;
+            this.btnexitvortex.Click += new System.EventHandler(this.btnexitvortex_Click);
+            // 
+            // btnentervortex
+            // 
+            this.btnentervortex.Location = new System.Drawing.Point(39, 400);
+            this.btnentervortex.Name = "btnentervortex";
+            this.btnentervortex.Size = new System.Drawing.Size(100, 21);
+            this.btnentervortex.TabIndex = 58;
+            this.btnentervortex.Text = "Drive up";
+            this.btnentervortex.UseVisualStyleBackColor = true;
+            this.btnentervortex.Click += new System.EventHandler(this.btnentervortex_Click);
+            // 
+            // btnorientvortexon
+            // 
+            this.btnorientvortexon.Location = new System.Drawing.Point(39, 373);
+            this.btnorientvortexon.Name = "btnorientvortexon";
+            this.btnorientvortexon.Size = new System.Drawing.Size(100, 21);
+            this.btnorientvortexon.TabIndex = 57;
+            this.btnorientvortexon.Text = "Orient to ramp";
+            this.btnorientvortexon.UseVisualStyleBackColor = true;
+            this.btnorientvortexon.Click += new System.EventHandler(this.btnorientvortexon_Click);
+            // 
             // chart1
             // 
             this.chart1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chart1.BackColor = System.Drawing.SystemColors.Window;
             this.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            chartArea1.AxisX.Title = "Time";
-            chartArea1.AxisY.ScaleView.Zoomable = false;
-            chartArea1.AxisY.Title = "Mag amp";
-            chartArea1.CursorX.IsUserEnabled = true;
-            chartArea1.CursorX.IsUserSelectionEnabled = true;
-            chartArea1.CursorY.IsUserEnabled = true;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.AxisX.Title = "Time";
+            chartArea2.AxisY.ScaleView.Zoomable = false;
+            chartArea2.AxisY.Title = "Mag amp";
+            chartArea2.CursorX.IsUserEnabled = true;
+            chartArea2.CursorX.IsUserSelectionEnabled = true;
+            chartArea2.CursorY.IsUserEnabled = true;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(6, 6);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             this.chart1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.Name = "Angle";
-            series1.Points.Add(dataPoint1);
-            series1.Points.Add(dataPoint2);
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(475, 359);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend1";
+            series2.Name = "Angle";
+            series2.Points.Add(dataPoint3);
+            series2.Points.Add(dataPoint4);
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(475, 347);
             this.chart1.SuppressExceptions = true;
             this.chart1.TabIndex = 56;
             this.chart1.Text = "Rotation Graph";
             // 
             // chrtReset
             // 
-            this.chrtReset.Location = new System.Drawing.Point(294, 386);
+            this.chrtReset.Location = new System.Drawing.Point(253, 371);
             this.chrtReset.Name = "chrtReset";
             this.chrtReset.Size = new System.Drawing.Size(75, 23);
             this.chrtReset.TabIndex = 35;
@@ -695,7 +804,7 @@
             // 
             // chartStop
             // 
-            this.chartStop.Location = new System.Drawing.Point(176, 416);
+            this.chartStop.Location = new System.Drawing.Point(172, 400);
             this.chartStop.Name = "chartStop";
             this.chartStop.Size = new System.Drawing.Size(75, 23);
             this.chartStop.TabIndex = 33;
@@ -705,7 +814,7 @@
             // 
             // chartStart
             // 
-            this.chartStart.Location = new System.Drawing.Point(176, 387);
+            this.chartStart.Location = new System.Drawing.Point(172, 371);
             this.chartStart.Name = "chartStart";
             this.chartStart.Size = new System.Drawing.Size(75, 23);
             this.chartStart.TabIndex = 28;
@@ -715,6 +824,32 @@
             // 
             // tabTeeter
             // 
+            this.tabTeeter.Controls.Add(this.button2);
+            this.tabTeeter.Controls.Add(this.pictureBox1);
+            this.tabTeeter.Controls.Add(this.lbllengthHval2);
+            this.tabTeeter.Controls.Add(this.lbllengthHval);
+            this.tabTeeter.Controls.Add(this.lbllengthCval);
+            this.tabTeeter.Controls.Add(this.lbllengthAval);
+            this.tabTeeter.Controls.Add(this.lblangleMval);
+            this.tabTeeter.Controls.Add(this.lbllengthA);
+            this.tabTeeter.Controls.Add(this.lblangleM);
+            this.tabTeeter.Controls.Add(this.lbllengthC);
+            this.tabTeeter.Controls.Add(this.lnllengthH);
+            this.tabTeeter.Controls.Add(this.lbllengthF);
+            this.tabTeeter.Controls.Add(this.lbllengthFval);
+            this.tabTeeter.Controls.Add(this.btncalcteeter);
+            this.tabTeeter.Controls.Add(this.txtdeclineangle);
+            this.tabTeeter.Controls.Add(this.txtinclineangle);
+            this.tabTeeter.Controls.Add(this.btnstoredeclineangle);
+            this.tabTeeter.Controls.Add(this.btnstoreinclneangle);
+            this.tabTeeter.Controls.Add(this.chkaccel);
+            this.tabTeeter.Controls.Add(this.lblAccelyG);
+            this.tabTeeter.Controls.Add(this.lblAccelxG);
+            this.tabTeeter.Controls.Add(this.label28);
+            this.tabTeeter.Controls.Add(this.label30);
+            this.tabTeeter.Controls.Add(this.LblAccelY);
+            this.tabTeeter.Controls.Add(this.LblAccelX);
+            this.tabTeeter.Controls.Add(this.btnorientteeter);
             this.tabTeeter.Location = new System.Drawing.Point(4, 22);
             this.tabTeeter.Name = "tabTeeter";
             this.tabTeeter.Padding = new System.Windows.Forms.Padding(3);
@@ -723,8 +858,251 @@
             this.tabTeeter.Text = "Teeter Board";
             this.tabTeeter.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(63, 11);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 90;
+            this.button2.Text = "Start ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_3);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(79, 226);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 113);
+            this.pictureBox1.TabIndex = 89;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lbllengthHval2
+            // 
+            this.lbllengthHval2.AutoSize = true;
+            this.lbllengthHval2.Location = new System.Drawing.Point(395, 255);
+            this.lbllengthHval2.Name = "lbllengthHval2";
+            this.lbllengthHval2.Size = new System.Drawing.Size(13, 13);
+            this.lbllengthHval2.TabIndex = 88;
+            this.lbllengthHval2.Text = "0";
+            // 
+            // lbllengthHval
+            // 
+            this.lbllengthHval.AutoSize = true;
+            this.lbllengthHval.Location = new System.Drawing.Point(395, 233);
+            this.lbllengthHval.Name = "lbllengthHval";
+            this.lbllengthHval.Size = new System.Drawing.Size(13, 13);
+            this.lbllengthHval.TabIndex = 87;
+            this.lbllengthHval.Text = "0";
+            // 
+            // lbllengthCval
+            // 
+            this.lbllengthCval.AutoSize = true;
+            this.lbllengthCval.Location = new System.Drawing.Point(395, 206);
+            this.lbllengthCval.Name = "lbllengthCval";
+            this.lbllengthCval.Size = new System.Drawing.Size(13, 13);
+            this.lbllengthCval.TabIndex = 86;
+            this.lbllengthCval.Text = "0";
+            // 
+            // lbllengthAval
+            // 
+            this.lbllengthAval.AutoSize = true;
+            this.lbllengthAval.Location = new System.Drawing.Point(395, 182);
+            this.lbllengthAval.Name = "lbllengthAval";
+            this.lbllengthAval.Size = new System.Drawing.Size(13, 13);
+            this.lbllengthAval.TabIndex = 85;
+            this.lbllengthAval.Text = "0";
+            // 
+            // lblangleMval
+            // 
+            this.lblangleMval.AutoSize = true;
+            this.lblangleMval.Location = new System.Drawing.Point(145, 210);
+            this.lblangleMval.Name = "lblangleMval";
+            this.lblangleMval.Size = new System.Drawing.Size(13, 13);
+            this.lblangleMval.TabIndex = 84;
+            this.lblangleMval.Text = "0";
+            // 
+            // lbllengthA
+            // 
+            this.lbllengthA.AutoSize = true;
+            this.lbllengthA.Location = new System.Drawing.Point(336, 182);
+            this.lbllengthA.Name = "lbllengthA";
+            this.lbllengthA.Size = new System.Drawing.Size(53, 13);
+            this.lbllengthA.TabIndex = 83;
+            this.lbllengthA.Text = "Length A:";
+            // 
+            // lblangleM
+            // 
+            this.lblangleM.AutoSize = true;
+            this.lblangleM.Location = new System.Drawing.Point(87, 210);
+            this.lblangleM.Name = "lblangleM";
+            this.lblangleM.Size = new System.Drawing.Size(49, 13);
+            this.lblangleM.TabIndex = 82;
+            this.lblangleM.Text = "Angle M:";
+            // 
+            // lbllengthC
+            // 
+            this.lbllengthC.AutoSize = true;
+            this.lbllengthC.Location = new System.Drawing.Point(336, 206);
+            this.lbllengthC.Name = "lbllengthC";
+            this.lbllengthC.Size = new System.Drawing.Size(53, 13);
+            this.lbllengthC.TabIndex = 79;
+            this.lbllengthC.Text = "Length C:";
+            // 
+            // lnllengthH
+            // 
+            this.lnllengthH.AutoSize = true;
+            this.lnllengthH.Location = new System.Drawing.Point(335, 233);
+            this.lnllengthH.Name = "lnllengthH";
+            this.lnllengthH.Size = new System.Drawing.Size(54, 13);
+            this.lnllengthH.TabIndex = 78;
+            this.lnllengthH.Text = "Length H:";
+            // 
+            // lbllengthF
+            // 
+            this.lbllengthF.AutoSize = true;
+            this.lbllengthF.Location = new System.Drawing.Point(87, 182);
+            this.lbllengthF.Name = "lbllengthF";
+            this.lbllengthF.Size = new System.Drawing.Size(52, 13);
+            this.lbllengthF.TabIndex = 77;
+            this.lbllengthF.Text = "Length F:";
+            // 
+            // lbllengthFval
+            // 
+            this.lbllengthFval.AutoSize = true;
+            this.lbllengthFval.Location = new System.Drawing.Point(145, 182);
+            this.lbllengthFval.Name = "lbllengthFval";
+            this.lbllengthFval.Size = new System.Drawing.Size(13, 13);
+            this.lbllengthFval.TabIndex = 36;
+            this.lbllengthFval.Text = "0";
+            // 
+            // btncalcteeter
+            // 
+            this.btncalcteeter.Location = new System.Drawing.Point(253, 127);
+            this.btncalcteeter.Name = "btncalcteeter";
+            this.btncalcteeter.Size = new System.Drawing.Size(100, 21);
+            this.btncalcteeter.TabIndex = 70;
+            this.btncalcteeter.Text = "Calculate lengths";
+            this.btncalcteeter.UseVisualStyleBackColor = true;
+            this.btncalcteeter.Click += new System.EventHandler(this.btncalcteeter_Click);
+            // 
+            // txtdeclineangle
+            // 
+            this.txtdeclineangle.Location = new System.Drawing.Point(373, 78);
+            this.txtdeclineangle.Name = "txtdeclineangle";
+            this.txtdeclineangle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtdeclineangle.Size = new System.Drawing.Size(89, 20);
+            this.txtdeclineangle.TabIndex = 69;
+            // 
+            // txtinclineangle
+            // 
+            this.txtinclineangle.Location = new System.Drawing.Point(373, 46);
+            this.txtinclineangle.Name = "txtinclineangle";
+            this.txtinclineangle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtinclineangle.Size = new System.Drawing.Size(89, 20);
+            this.txtinclineangle.TabIndex = 36;
+            // 
+            // btnstoredeclineangle
+            // 
+            this.btnstoredeclineangle.Location = new System.Drawing.Point(253, 78);
+            this.btnstoredeclineangle.Name = "btnstoredeclineangle";
+            this.btnstoredeclineangle.Size = new System.Drawing.Size(100, 21);
+            this.btnstoredeclineangle.TabIndex = 68;
+            this.btnstoredeclineangle.Text = "Store Decline";
+            this.btnstoredeclineangle.UseVisualStyleBackColor = true;
+            this.btnstoredeclineangle.Click += new System.EventHandler(this.btnstoredeclineangle_Click);
+            // 
+            // btnstoreinclneangle
+            // 
+            this.btnstoreinclneangle.Location = new System.Drawing.Point(253, 46);
+            this.btnstoreinclneangle.Name = "btnstoreinclneangle";
+            this.btnstoreinclneangle.Size = new System.Drawing.Size(100, 21);
+            this.btnstoreinclneangle.TabIndex = 36;
+            this.btnstoreinclneangle.Text = "Store incline";
+            this.btnstoreinclneangle.UseVisualStyleBackColor = true;
+            this.btnstoreinclneangle.Click += new System.EventHandler(this.btnstoreinclneangle_Click);
+            // 
+            // chkaccel
+            // 
+            this.chkaccel.AutoSize = true;
+            this.chkaccel.Location = new System.Drawing.Point(39, 49);
+            this.chkaccel.Name = "chkaccel";
+            this.chkaccel.Size = new System.Drawing.Size(61, 17);
+            this.chkaccel.TabIndex = 67;
+            this.chkaccel.Text = "Sample";
+            this.chkaccel.UseVisualStyleBackColor = true;
+            // 
+            // lblAccelyG
+            // 
+            this.lblAccelyG.AutoSize = true;
+            this.lblAccelyG.Location = new System.Drawing.Point(175, 101);
+            this.lblAccelyG.Name = "lblAccelyG";
+            this.lblAccelyG.Size = new System.Drawing.Size(28, 13);
+            this.lblAccelyG.TabIndex = 66;
+            this.lblAccelyG.Text = "Yaw";
+            // 
+            // lblAccelxG
+            // 
+            this.lblAccelxG.AutoSize = true;
+            this.lblAccelxG.Location = new System.Drawing.Point(175, 78);
+            this.lblAccelxG.Name = "lblAccelxG";
+            this.lblAccelxG.Size = new System.Drawing.Size(31, 13);
+            this.lblAccelxG.TabIndex = 65;
+            this.lblAccelxG.Text = "Pitch";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(36, 101);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(17, 13);
+            this.label28.TabIndex = 64;
+            this.label28.Text = "Y:";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(36, 78);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(17, 13);
+            this.label30.TabIndex = 62;
+            this.label30.Text = "X:";
+            // 
+            // LblAccelY
+            // 
+            this.LblAccelY.AutoSize = true;
+            this.LblAccelY.Location = new System.Drawing.Point(59, 101);
+            this.LblAccelY.Name = "LblAccelY";
+            this.LblAccelY.Size = new System.Drawing.Size(85, 13);
+            this.LblAccelY.TabIndex = 60;
+            this.LblAccelY.Text = "Accelerometer Y";
+            // 
+            // LblAccelX
+            // 
+            this.LblAccelX.AutoSize = true;
+            this.LblAccelX.Location = new System.Drawing.Point(59, 78);
+            this.LblAccelX.Name = "LblAccelX";
+            this.LblAccelX.Size = new System.Drawing.Size(85, 13);
+            this.LblAccelX.TabIndex = 59;
+            this.LblAccelX.Text = "Accelerometer X";
+            // 
+            // btnorientteeter
+            // 
+            this.btnorientteeter.Location = new System.Drawing.Point(44, 384);
+            this.btnorientteeter.Name = "btnorientteeter";
+            this.btnorientteeter.Size = new System.Drawing.Size(100, 21);
+            this.btnorientteeter.TabIndex = 58;
+            this.btnorientteeter.Text = "Orient to Teeter";
+            this.btnorientteeter.UseVisualStyleBackColor = true;
+            this.btnorientteeter.Click += new System.EventHandler(this.button2_Click_2);
+            // 
             // tabearthquake
             // 
+            this.tabearthquake.Controls.Add(this.btnselsafterearthquake);
+            this.tabearthquake.Controls.Add(this.btnexitearthquake);
+            this.tabearthquake.Controls.Add(this.btnenterearthquake);
+            this.tabearthquake.Controls.Add(this.btnorientearthquake);
             this.tabearthquake.Controls.Add(this.btnclearsamples);
             this.tabearthquake.Controls.Add(this.label8);
             this.tabearthquake.Controls.Add(this.lbletimercycles);
@@ -743,9 +1121,49 @@
             this.tabearthquake.Text = "Earthquake";
             this.tabearthquake.UseVisualStyleBackColor = true;
             // 
+            // btnselsafterearthquake
+            // 
+            this.btnselsafterearthquake.Location = new System.Drawing.Point(180, 321);
+            this.btnselsafterearthquake.Name = "btnselsafterearthquake";
+            this.btnselsafterearthquake.Size = new System.Drawing.Size(100, 21);
+            this.btnselsafterearthquake.TabIndex = 56;
+            this.btnselsafterearthquake.Text = "Get location";
+            this.btnselsafterearthquake.UseVisualStyleBackColor = true;
+            this.btnselsafterearthquake.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // btnexitearthquake
+            // 
+            this.btnexitearthquake.Location = new System.Drawing.Point(180, 279);
+            this.btnexitearthquake.Name = "btnexitearthquake";
+            this.btnexitearthquake.Size = new System.Drawing.Size(100, 21);
+            this.btnexitearthquake.TabIndex = 42;
+            this.btnexitearthquake.Text = "Drive down";
+            this.btnexitearthquake.UseVisualStyleBackColor = true;
+            this.btnexitearthquake.Click += new System.EventHandler(this.btnexitearthquake_Click);
+            // 
+            // btnenterearthquake
+            // 
+            this.btnenterearthquake.Location = new System.Drawing.Point(180, 107);
+            this.btnenterearthquake.Name = "btnenterearthquake";
+            this.btnenterearthquake.Size = new System.Drawing.Size(100, 21);
+            this.btnenterearthquake.TabIndex = 41;
+            this.btnenterearthquake.Text = "Drive up";
+            this.btnenterearthquake.UseVisualStyleBackColor = true;
+            this.btnenterearthquake.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnorientearthquake
+            // 
+            this.btnorientearthquake.Location = new System.Drawing.Point(180, 70);
+            this.btnorientearthquake.Name = "btnorientearthquake";
+            this.btnorientearthquake.Size = new System.Drawing.Size(100, 21);
+            this.btnorientearthquake.TabIndex = 40;
+            this.btnorientearthquake.Text = "Orient to ramp";
+            this.btnorientearthquake.UseVisualStyleBackColor = true;
+            this.btnorientearthquake.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // btnclearsamples
             // 
-            this.btnclearsamples.Location = new System.Drawing.Point(259, 75);
+            this.btnclearsamples.Location = new System.Drawing.Point(310, 176);
             this.btnclearsamples.Name = "btnclearsamples";
             this.btnclearsamples.Size = new System.Drawing.Size(100, 21);
             this.btnclearsamples.TabIndex = 39;
@@ -775,7 +1193,7 @@
             // 
             this.chkesampling.AutoSize = true;
             this.chkesampling.Enabled = false;
-            this.chkesampling.Location = new System.Drawing.Point(165, 78);
+            this.chkesampling.Location = new System.Drawing.Point(216, 179);
             this.chkesampling.Name = "chkesampling";
             this.chkesampling.Size = new System.Drawing.Size(72, 17);
             this.chkesampling.TabIndex = 36;
@@ -785,7 +1203,7 @@
             // lblearthsamplestaken
             // 
             this.lblearthsamplestaken.AutoSize = true;
-            this.lblearthsamplestaken.Location = new System.Drawing.Point(115, 78);
+            this.lblearthsamplestaken.Location = new System.Drawing.Point(166, 179);
             this.lblearthsamplestaken.Name = "lblearthsamplestaken";
             this.lblearthsamplestaken.Size = new System.Drawing.Size(13, 13);
             this.lblearthsamplestaken.TabIndex = 36;
@@ -794,7 +1212,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 78);
+            this.label5.Location = new System.Drawing.Point(80, 179);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 13);
             this.label5.TabIndex = 35;
@@ -803,7 +1221,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 27);
+            this.label4.Location = new System.Drawing.Point(71, 128);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 33;
@@ -811,7 +1229,7 @@
             // 
             // btndumptofile
             // 
-            this.btndumptofile.Location = new System.Drawing.Point(165, 127);
+            this.btndumptofile.Location = new System.Drawing.Point(180, 231);
             this.btndumptofile.Name = "btndumptofile";
             this.btndumptofile.Size = new System.Drawing.Size(100, 21);
             this.btndumptofile.TabIndex = 33;
@@ -821,7 +1239,7 @@
             // 
             // btnearthquakestop
             // 
-            this.btnearthquakestop.Location = new System.Drawing.Point(129, 43);
+            this.btnearthquakestop.Location = new System.Drawing.Point(180, 144);
             this.btnearthquakestop.Name = "btnearthquakestop";
             this.btnearthquakestop.Size = new System.Drawing.Size(100, 21);
             this.btnearthquakestop.TabIndex = 34;
@@ -831,7 +1249,7 @@
             // 
             // btnearthquakestart
             // 
-            this.btnearthquakestart.Location = new System.Drawing.Point(23, 43);
+            this.btnearthquakestart.Location = new System.Drawing.Point(74, 144);
             this.btnearthquakestart.Name = "btnearthquakestart";
             this.btnearthquakestart.Size = new System.Drawing.Size(100, 21);
             this.btnearthquakestart.TabIndex = 33;
@@ -841,7 +1259,8 @@
             // 
             // tablights
             // 
-            this.tablights.Controls.Add(this.stopPthBtn);
+            this.tablights.Controls.Add(this.lighttxt2);
+            this.tablights.Controls.Add(this.stopPth);
             this.tablights.Controls.Add(this.LightDrawBtn);
             this.tablights.Controls.Add(this.lightPnl);
             this.tablights.Controls.Add(this.lightdTxt);
@@ -857,9 +1276,9 @@
             // 
             // LightDrawBtn
             // 
-            this.LightDrawBtn.Location = new System.Drawing.Point(78, 420);
+            this.LightDrawBtn.Location = new System.Drawing.Point(6, 438);
             this.LightDrawBtn.Name = "LightDrawBtn";
-            this.LightDrawBtn.Size = new System.Drawing.Size(156, 23);
+            this.LightDrawBtn.Size = new System.Drawing.Size(27, 23);
             this.LightDrawBtn.TabIndex = 3;
             this.LightDrawBtn.Text = "DRAW PATH";
             this.LightDrawBtn.UseVisualStyleBackColor = true;
@@ -867,22 +1286,22 @@
             // 
             // lightPnl
             // 
-            this.lightPnl.Location = new System.Drawing.Point(46, 49);
+            this.lightPnl.Location = new System.Drawing.Point(35, 34);
             this.lightPnl.Name = "lightPnl";
-            this.lightPnl.Size = new System.Drawing.Size(350, 350);
+            this.lightPnl.Size = new System.Drawing.Size(421, 427);
             this.lightPnl.TabIndex = 2;
             // 
             // lightdTxt
             // 
-            this.lightdTxt.Location = new System.Drawing.Point(46, 23);
+            this.lightdTxt.Location = new System.Drawing.Point(23, 8);
             this.lightdTxt.Name = "lightdTxt";
-            this.lightdTxt.Size = new System.Drawing.Size(100, 20);
+            this.lightdTxt.Size = new System.Drawing.Size(52, 20);
             this.lightdTxt.TabIndex = 1;
-            this.lightdTxt.Text = "Length";
+            this.lightdTxt.Text = "Sensor1";
             // 
             // lightPathBtn
             // 
-            this.lightPathBtn.Location = new System.Drawing.Point(152, 21);
+            this.lightPathBtn.Location = new System.Drawing.Point(152, 6);
             this.lightPathBtn.Name = "lightPathBtn";
             this.lightPathBtn.Size = new System.Drawing.Size(75, 23);
             this.lightPathBtn.TabIndex = 0;
@@ -1267,7 +1686,7 @@
             // 
             // btngetsels
             // 
-            this.btngetsels.Location = new System.Drawing.Point(764, 358);
+            this.btngetsels.Location = new System.Drawing.Point(1070, 43);
             this.btngetsels.Name = "btngetsels";
             this.btngetsels.Size = new System.Drawing.Size(100, 21);
             this.btngetsels.TabIndex = 40;
@@ -1278,7 +1697,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(974, 360);
+            this.label13.Location = new System.Drawing.Point(1080, 73);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(64, 13);
             this.label13.TabIndex = 49;
@@ -1287,7 +1706,7 @@
             // lblcoordX
             // 
             this.lblcoordX.AutoSize = true;
-            this.lblcoordX.Location = new System.Drawing.Point(1044, 360);
+            this.lblcoordX.Location = new System.Drawing.Point(1150, 73);
             this.lblcoordX.Name = "lblcoordX";
             this.lblcoordX.Size = new System.Drawing.Size(13, 13);
             this.lblcoordX.TabIndex = 50;
@@ -1296,7 +1715,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(974, 379);
+            this.label14.Location = new System.Drawing.Point(1080, 92);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(61, 13);
             this.label14.TabIndex = 51;
@@ -1305,7 +1724,7 @@
             // lblcoordY
             // 
             this.lblcoordY.AutoSize = true;
-            this.lblcoordY.Location = new System.Drawing.Point(1044, 379);
+            this.lblcoordY.Location = new System.Drawing.Point(1150, 92);
             this.lblcoordY.Name = "lblcoordY";
             this.lblcoordY.Size = new System.Drawing.Size(13, 13);
             this.lblcoordY.TabIndex = 52;
@@ -1316,11 +1735,16 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.picRover);
+            this.panel1.Controls.Add(this.picmorseaproach);
+            this.panel1.Controls.Add(this.picvortex);
+            this.panel1.Controls.Add(this.picearthquake);
+            this.panel1.Controls.Add(this.picimage);
+            this.panel1.Controls.Add(this.pictteeteraproach);
+            this.panel1.Controls.Add(this.picteeter);
             this.panel1.Location = new System.Drawing.Point(764, 39);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 300);
             this.panel1.TabIndex = 53;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // picRover
             // 
@@ -1333,6 +1757,78 @@
             this.picRover.Size = new System.Drawing.Size(10, 10);
             this.picRover.TabIndex = 0;
             this.picRover.TabStop = false;
+            // 
+            // picmorseaproach
+            // 
+            this.picmorseaproach.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picmorseaproach.BackColor = System.Drawing.Color.Black;
+            this.picmorseaproach.Location = new System.Drawing.Point(215, 25);
+            this.picmorseaproach.Margin = new System.Windows.Forms.Padding(0);
+            this.picmorseaproach.Name = "picmorseaproach";
+            this.picmorseaproach.Size = new System.Drawing.Size(10, 10);
+            this.picmorseaproach.TabIndex = 6;
+            this.picmorseaproach.TabStop = false;
+            this.picmorseaproach.Click += new System.EventHandler(this.picmorseaproach_Click);
+            // 
+            // picvortex
+            // 
+            this.picvortex.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picvortex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.picvortex.Location = new System.Drawing.Point(222, 100);
+            this.picvortex.Margin = new System.Windows.Forms.Padding(0);
+            this.picvortex.Name = "picvortex";
+            this.picvortex.Size = new System.Drawing.Size(10, 10);
+            this.picvortex.TabIndex = 5;
+            this.picvortex.TabStop = false;
+            this.picvortex.Click += new System.EventHandler(this.picvortex_Click);
+            // 
+            // picearthquake
+            // 
+            this.picearthquake.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picearthquake.BackColor = System.Drawing.Color.Yellow;
+            this.picearthquake.Location = new System.Drawing.Point(188, 200);
+            this.picearthquake.Margin = new System.Windows.Forms.Padding(0);
+            this.picearthquake.Name = "picearthquake";
+            this.picearthquake.Size = new System.Drawing.Size(10, 10);
+            this.picearthquake.TabIndex = 4;
+            this.picearthquake.TabStop = false;
+            this.picearthquake.Click += new System.EventHandler(this.picearthquake_Click);
+            // 
+            // picimage
+            // 
+            this.picimage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picimage.BackColor = System.Drawing.Color.Blue;
+            this.picimage.Location = new System.Drawing.Point(105, 155);
+            this.picimage.Margin = new System.Windows.Forms.Padding(0);
+            this.picimage.Name = "picimage";
+            this.picimage.Size = new System.Drawing.Size(10, 10);
+            this.picimage.TabIndex = 3;
+            this.picimage.TabStop = false;
+            this.picimage.Click += new System.EventHandler(this.picimage_Click);
+            // 
+            // pictteeteraproach
+            // 
+            this.pictteeteraproach.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictteeteraproach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pictteeteraproach.Location = new System.Drawing.Point(55, 235);
+            this.pictteeteraproach.Margin = new System.Windows.Forms.Padding(0);
+            this.pictteeteraproach.Name = "pictteeteraproach";
+            this.pictteeteraproach.Size = new System.Drawing.Size(10, 10);
+            this.pictteeteraproach.TabIndex = 2;
+            this.pictteeteraproach.TabStop = false;
+            this.pictteeteraproach.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // picteeter
+            // 
+            this.picteeter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picteeter.BackColor = System.Drawing.Color.Red;
+            this.picteeter.Location = new System.Drawing.Point(55, 175);
+            this.picteeter.Margin = new System.Windows.Forms.Padding(0);
+            this.picteeter.Name = "picteeter";
+            this.picteeter.Size = new System.Drawing.Size(10, 10);
+            this.picteeter.TabIndex = 1;
+            this.picteeter.TabStop = false;
+            this.picteeter.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label20
             // 
@@ -1374,21 +1870,172 @@
             // 
             this.chrtTmr.Tick += new System.EventHandler(this.chrtTmr_Tick);
             // 
-            // stopPthBtn
+            // btncalculatepath
             // 
-            this.stopPthBtn.Location = new System.Drawing.Point(260, 19);
-            this.stopPthBtn.Name = "stopPthBtn";
-            this.stopPthBtn.Size = new System.Drawing.Size(75, 23);
-            this.stopPthBtn.TabIndex = 4;
-            this.stopPthBtn.Text = "STOP";
-            this.stopPthBtn.UseVisualStyleBackColor = true;
-            this.stopPthBtn.Click += new System.EventHandler(this.stopPthBtn_Click);
+            this.btncalculatepath.Location = new System.Drawing.Point(822, 450);
+            this.btncalculatepath.Name = "btncalculatepath";
+            this.btncalculatepath.Size = new System.Drawing.Size(89, 21);
+            this.btncalculatepath.TabIndex = 56;
+            this.btncalculatepath.Text = "Get Path";
+            this.btncalculatepath.UseVisualStyleBackColor = true;
+            this.btncalculatepath.Click += new System.EventHandler(this.btncalculatepath_Click);
+            // 
+            // txtxwanted
+            // 
+            this.txtxwanted.Location = new System.Drawing.Point(822, 398);
+            this.txtxwanted.Name = "txtxwanted";
+            this.txtxwanted.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtxwanted.Size = new System.Drawing.Size(89, 20);
+            this.txtxwanted.TabIndex = 36;
+            this.txtxwanted.Text = "0";
+            // 
+            // txtywanted
+            // 
+            this.txtywanted.Location = new System.Drawing.Point(822, 424);
+            this.txtywanted.Name = "txtywanted";
+            this.txtywanted.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtywanted.Size = new System.Drawing.Size(89, 20);
+            this.txtywanted.TabIndex = 57;
+            this.txtywanted.Text = "0";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(755, 405);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(64, 13);
+            this.label25.TabIndex = 58;
+            this.label25.Text = "Location X: ";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(755, 430);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(61, 13);
+            this.label26.TabIndex = 59;
+            this.label26.Text = "Location Y:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(786, 381);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(51, 13);
+            this.label27.TabIndex = 60;
+            this.label27.Text = "Drive To;";
+            // 
+            // txttravelangle
+            // 
+            this.txttravelangle.Location = new System.Drawing.Point(942, 398);
+            this.txttravelangle.Name = "txttravelangle";
+            this.txttravelangle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txttravelangle.Size = new System.Drawing.Size(89, 20);
+            this.txttravelangle.TabIndex = 36;
+            this.txttravelangle.Text = "0";
+            // 
+            // txttraveldistance
+            // 
+            this.txttraveldistance.Location = new System.Drawing.Point(942, 424);
+            this.txttraveldistance.Name = "txttraveldistance";
+            this.txttraveldistance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txttraveldistance.Size = new System.Drawing.Size(89, 20);
+            this.txttraveldistance.TabIndex = 61;
+            this.txttraveldistance.Text = "0";
+            // 
+            // btnturntravel
+            // 
+            this.btnturntravel.Location = new System.Drawing.Point(1041, 397);
+            this.btnturntravel.Name = "btnturntravel";
+            this.btnturntravel.Size = new System.Drawing.Size(100, 21);
+            this.btnturntravel.TabIndex = 36;
+            this.btnturntravel.Text = "Turn";
+            this.btnturntravel.UseVisualStyleBackColor = true;
+            this.btnturntravel.Click += new System.EventHandler(this.btnturntravel_Click);
+            // 
+            // btntravelgo
+            // 
+            this.btntravelgo.Location = new System.Drawing.Point(1041, 423);
+            this.btntravelgo.Name = "btntravelgo";
+            this.btntravelgo.Size = new System.Drawing.Size(100, 21);
+            this.btntravelgo.TabIndex = 36;
+            this.btntravelgo.Text = "Go";
+            this.btntravelgo.UseVisualStyleBackColor = true;
+            this.btntravelgo.Click += new System.EventHandler(this.btntravelgo_Click);
+            // 
+            // tmraccelerometer
+            // 
+            this.tmraccelerometer.Enabled = true;
+            this.tmraccelerometer.Tick += new System.EventHandler(this.tmraccelerometer_Tick);
+            // 
+            // chkturning
+            // 
+            this.chkturning.AutoSize = true;
+            this.chkturning.Location = new System.Drawing.Point(789, 12);
+            this.chkturning.Name = "chkturning";
+            this.chkturning.Size = new System.Drawing.Size(62, 17);
+            this.chkturning.TabIndex = 62;
+            this.chkturning.Text = "Turning";
+            this.chkturning.UseVisualStyleBackColor = true;
+            // 
+            // chktravelling
+            // 
+            this.chktravelling.AutoSize = true;
+            this.chktravelling.Location = new System.Drawing.Point(872, 12);
+            this.chktravelling.Name = "chktravelling";
+            this.chktravelling.Size = new System.Drawing.Size(72, 17);
+            this.chktravelling.TabIndex = 63;
+            this.chktravelling.Text = "Travelling";
+            this.chktravelling.UseVisualStyleBackColor = true;
+            // 
+            // teeterTmr
+            // 
+            this.teeterTmr.Tick += new System.EventHandler(this.teeterTmr_Tick);
+            // 
+            // stopPth
+            // 
+            this.stopPth.Location = new System.Drawing.Point(248, 6);
+            this.stopPth.Name = "stopPth";
+            this.stopPth.Size = new System.Drawing.Size(75, 23);
+            this.stopPth.TabIndex = 4;
+            this.stopPth.Text = "Stop";
+            this.stopPth.UseVisualStyleBackColor = true;
+            this.stopPth.Click += new System.EventHandler(this.stopPth_Click);
+            // 
+            // lighttxt2
+            // 
+            this.lighttxt2.Location = new System.Drawing.Point(82, 7);
+            this.lighttxt2.Name = "lighttxt2";
+            this.lighttxt2.Size = new System.Drawing.Size(64, 20);
+            this.lighttxt2.TabIndex = 5;
+            this.lighttxt2.Text = "Sensor2";
+            // 
+            // spinslbl
+            // 
+            this.spinslbl.AutoSize = true;
+            this.spinslbl.Location = new System.Drawing.Point(56, 339);
+            this.spinslbl.Name = "spinslbl";
+            this.spinslbl.Size = new System.Drawing.Size(31, 13);
+            this.spinslbl.TabIndex = 61;
+            this.spinslbl.Text = "spins";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1079, 519);
+            this.ClientSize = new System.Drawing.Size(1181, 532);
+            this.Controls.Add(this.chktravelling);
+            this.Controls.Add(this.chkturning);
+            this.Controls.Add(this.btntravelgo);
+            this.Controls.Add(this.btnturntravel);
+            this.Controls.Add(this.txttraveldistance);
+            this.Controls.Add(this.txttravelangle);
+            this.Controls.Add(this.label27);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.txtywanted);
+            this.Controls.Add(this.txtxwanted);
+            this.Controls.Add(this.btncalculatepath);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
@@ -1414,7 +2061,11 @@
             this.groupBox3.PerformLayout();
             this.Rotation.ResumeLayout(false);
             this.tabVortex.ResumeLayout(false);
+            this.tabVortex.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.tabTeeter.ResumeLayout(false);
+            this.tabTeeter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabearthquake.ResumeLayout(false);
             this.tabearthquake.PerformLayout();
             this.tablights.ResumeLayout(false);
@@ -1423,6 +2074,12 @@
             this.tabtesting.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picRover)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picmorseaproach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picvortex)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picearthquake)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picimage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictteeteraproach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picteeter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1548,7 +2205,63 @@
         private System.Windows.Forms.Button chrtReset;
         private System.Windows.Forms.Timer chrtTmr;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Button stopPthBtn;
+        private System.Windows.Forms.Button btnselsafterearthquake;
+        private System.Windows.Forms.Button btnexitearthquake;
+        private System.Windows.Forms.Button btnenterearthquake;
+        private System.Windows.Forms.Button btnorientearthquake;
+        private System.Windows.Forms.Button btnorientexitvortex;
+        private System.Windows.Forms.Button btnexitvortex;
+        private System.Windows.Forms.Button btnentervortex;
+        private System.Windows.Forms.Button btnorientvortexon;
+        private System.Windows.Forms.Button btnorientteeter;
+        private System.Windows.Forms.Button btncalculatepath;
+        private System.Windows.Forms.TextBox txtxwanted;
+        private System.Windows.Forms.TextBox txtywanted;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox txttravelangle;
+        private System.Windows.Forms.TextBox txttraveldistance;
+        private System.Windows.Forms.Button btnturntravel;
+        private System.Windows.Forms.Button btntravelgo;
+        private System.Windows.Forms.CheckBox chkaccel;
+        private System.Windows.Forms.Label lblAccelyG;
+        private System.Windows.Forms.Label lblAccelxG;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label LblAccelY;
+        private System.Windows.Forms.Label LblAccelX;
+        private System.Windows.Forms.Timer tmraccelerometer;
+        private System.Windows.Forms.TextBox txtdeclineangle;
+        private System.Windows.Forms.TextBox txtinclineangle;
+        private System.Windows.Forms.Button btnstoredeclineangle;
+        private System.Windows.Forms.Button btnstoreinclneangle;
+        private System.Windows.Forms.Label lbllengthHval;
+        private System.Windows.Forms.Label lbllengthCval;
+        private System.Windows.Forms.Label lbllengthAval;
+        private System.Windows.Forms.Label lblangleMval;
+        private System.Windows.Forms.Label lbllengthA;
+        private System.Windows.Forms.Label lblangleM;
+        private System.Windows.Forms.Label lbllengthC;
+        private System.Windows.Forms.Label lnllengthH;
+        private System.Windows.Forms.Label lbllengthF;
+        private System.Windows.Forms.Label lbllengthFval;
+        private System.Windows.Forms.Button btncalcteeter;
+        private System.Windows.Forms.Label lbllengthHval2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox chkturning;
+        private System.Windows.Forms.CheckBox chktravelling;
+        private System.Windows.Forms.PictureBox picvortex;
+        private System.Windows.Forms.PictureBox picearthquake;
+        private System.Windows.Forms.PictureBox picimage;
+        private System.Windows.Forms.PictureBox pictteeteraproach;
+        private System.Windows.Forms.PictureBox picteeter;
+        private System.Windows.Forms.PictureBox picmorseaproach;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Timer teeterTmr;
+        private System.Windows.Forms.Button stopPth;
+        private System.Windows.Forms.TextBox lighttxt2;
+        private System.Windows.Forms.Label spinslbl;
     }
 }
 

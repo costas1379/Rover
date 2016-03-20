@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,15 +49,24 @@ namespace WIFIGUIDemo
         float[] towerY = new float[4] { 0, 300, 0, 300 };
         List<double> CoordsX = new List<double>();
         List<double> CoordsY = new List<double>();
-        //light counter
-        int li = 1;
+        //light vars
+        int LightReading1 = 0;
+        int LightReading2 = 0;
+        int li = 0;
+        int lx1 = 0, lx2 =0, ly1 = 5, ly2 = 5;
+        int lx3 = -10, lx4 = -10, ly3 = 5, ly4 = 5;
+        int[] lightar1 = { 0, 0, 0 };
+        int[] lightar2 = { 0, 0, 0 };
+        int lightarc = 1;
+        Color myColour1;
+        Color myColour2;
         //Rotary encoder
         int motor_position = 0;
         int flag_wantedmotorpos;
         int flag_travelling = 0; // traveling direction. 0 = stationary, 1 = forward, 2 = backward
         //Magnetometer
         double flag_heading = 0;
-        double flag_northheading;
+        double flag_northheading = 318.7;
         double flag_wantedheading;
         bool flag_vortexsample = false;
         bool flag_setnorth = false;
@@ -69,15 +78,22 @@ namespace WIFIGUIDemo
         int x_min = 30000;
         int y_min = 30000;
         int z_min = 30000;
-        int LightReading1 = 0;
-        int LightReading2 = 0;
-        int lx1=0,lx2=0,ly1=0,ly2=0;
-        int[] lightar1={0,0,0};
-        int lightar2={0,0,0};
-        int lightarc=0;
+        //Accelerometer
+        short xAccMax = -32000, xAccMin = 32000, yAccMax = -32000, yAccMin = 32000, zAccMax = -32000, zAccMin = 32000;
+        short Xzero;
+        short Yzero;
+        short Zzero;
+        bool Accl_Zeroed = false;
+        double angleB = 0, angleD = 0, lengthF = 0, lengthA = 0, lengthC = 0, lengthH = 0;
+        double lengthL = 152;
+        double flag_pitch = 0;
+        double pastPitch=-0;
         //
         int timerAngle = 0;
         double timermaga =0;
+        int noOfSpins=0;
+        double startAngle;
+        double prevAngle;
 
         //Earthquake
         bool flag_sampleearthquake;
@@ -210,7 +226,24 @@ namespace WIFIGUIDemo
                             }
                         }
                         break;
+                    case (byte)CommandID.CMDRDlightsensors:
+                        {
 
+                            LightReading1 = (short)(NewData[4] << 8 | NewData[5]);
+                            LightReading2 = (short)(NewData[6] << 8 | NewData[7]);
+                            //flag_LightData = true;
+
+
+                            this.BeginInvoke(new EventHandler(delegate
+                            {
+
+                                // label10.Text = LightReading1.ToString();
+                                //label11.Text = LightReading2.ToString();
+
+
+                            }));
+                        }
+                        break;
                     case (byte)CommandID.CMDGETUSGPS:
                         this.BeginInvoke(new EventHandler(delegate
                         {                                               // Option 1 - calculates the location (see HandleUSGPSReply)
@@ -218,26 +251,6 @@ namespace WIFIGUIDemo
                             Option_1_HandleUSGPSReply(NewData);         // This executes Option 1
                             //Option_2_HandleUSGPSReply(NewData);         // This executes Option 2
                         }));
-                        break;
-                     //photo diode
-                        
-                     case (byte)CommandID.CMDRDlightsensors:
-                        {
-
-                            LightReading1 = (short)(NewData[4] << 8 | NewData[5]);
-                            LightReading2 = (short)(NewData[6] << 8 | NewData[7]);
-                            flag_LightData = true;
-
-
-                            this.BeginInvoke(new EventHandler(delegate
-                                {
-
-                                   // label10.Text = LightReading1.ToString();
-                                    //label11.Text = LightReading2.ToString();
-
-
-                                }));
-                        }
                         break;
                     case (byte)CommandID.CMDREADMag:
                         {
@@ -362,6 +375,45 @@ namespace WIFIGUIDemo
                             }
                         }
                         break;
+
+                    case (byte)CommandID.CMDREADMMA8452:
+                        {
+
+
+                            short Accelx = (short)(NewData[4] << 8 | NewData[5]);
+                            short Accely = (short)(NewData[6] << 8 | NewData[7]);
+                            short Accelz = (short)(NewData[8] << 8 | NewData[9]); // ASK FOR HELP READING IN
+
+                            if (Accelx < xAccMin) xAccMin = Accelx;
+                            if (Accelx > xAccMax) xAccMax = Accelx;
+                            if (Accely < yAccMin) yAccMin = Accely;
+                            if (Accely > yAccMax) yAccMax = Accely;
+                            if (Accelz < zAccMin) zAccMin = Accelz;
+                            if (Accelz > zAccMax) zAccMax = Accelz;
+                            if (Accl_Zeroed == false)
+                            {
+                                //  Xzero = Accelx;
+                                //  Yzero = Accely;
+                                //  Zzero = Accelz;
+                                Accl_Zeroed = true;
+                            }
+                            double x = (Accelx - Xzero) / 16768.0F;
+                            double y = (Accely - Yzero) / 16768.0F;
+                            double z = (Accelz - Zzero) / 16768.0F;
+
+                            //Add code for angle
+                            double pitch = -1.0F * Math.Atan2(x, Math.Sqrt((y * y) + (z * z)));                            pitch = pitch * (180 / Math.PI)-3;
+                            flag_pitch = pitch;
+
+
+                            this.BeginInvoke(new EventHandler(delegate
+                            {
+                                LblAccelX.Text = pitch.ToString();
+                                LblAccelY.Text = y.ToString();
+
+                            }));
+                        }
+                        break;
                     case (byte)CommandID.CMDQUAKE:
                         {
                             if (chkesampling.Checked == true)
@@ -466,16 +518,16 @@ namespace WIFIGUIDemo
             double timeFromC = (short)(newData[8] << 8) + newData[9];                  // reconstruct the 16 bit distance from Beacon C
             double timeFromD = (short)(newData[10] << 8) + newData[11];                  // reconstruct the 16 bit distance from Beacon D
 
-            double distanceFromA = (timeFromA - 40.5) /460;
-            double distanceFromB = (timeFromB - 40.5) / 460;
-            double distanceFromC = (timeFromC - 40.5) / 460;
-            double distanceFromD = (timeFromD - 40.5) / 460;
+            double distanceFromA = (timeFromA - 40.5) / 4.60;
+            double distanceFromB = (timeFromB - 40.5) / 4.60;
+            double distanceFromC = (timeFromC - 40.5) / 4.60;
+            double distanceFromD = (timeFromD - 40.5) / 4.60;
             
             double[] flatdistance = new double[4];                              //0 = A, 1 = B, 2 = C, 3 = D
-            flatdistance[0] = 100*Math.Sqrt((distanceFromA * distanceFromA) - 4);   //hypotenuse - an edge
-            flatdistance[1] = 100*Math.Sqrt((distanceFromB * distanceFromB) - 4);
-            flatdistance[2] = 100*Math.Sqrt((distanceFromC * distanceFromC) - 4);
-            flatdistance[3] = 100*Math.Sqrt((distanceFromD * distanceFromD) - 4);
+            flatdistance[0] = Math.Sqrt((distanceFromA * distanceFromA) - 4)-60;   //hypotenuse - an edge
+            flatdistance[1] = Math.Sqrt((distanceFromB * distanceFromB) - 4)-60;
+            flatdistance[2] = Math.Sqrt((distanceFromC * distanceFromC) - 4)-60;
+            flatdistance[3] = Math.Sqrt((distanceFromD * distanceFromD) - 4)-60;
 
 
             for (int L = 0; L < 4; L++)
@@ -503,7 +555,7 @@ namespace WIFIGUIDemo
                 popularity.Add(0);
                 for (int L = 0; L < CoordsX.Count; L++)
                 {
-                    if (CoordsX[i] < CoordsX[L] + 4 && CoordsX[i] > CoordsX[L] - 4)
+                    if (CoordsX[i] < CoordsX[L] + 2 && CoordsX[i] > CoordsX[L] - 2)
                     {
                         popularity[i]++;
                     }
@@ -525,7 +577,7 @@ namespace WIFIGUIDemo
                 popularity.Add(0);
                 for (int L = 0; L < CoordsY.Count; L++)
                 {
-                    if (CoordsY[i] < CoordsY[L] + 4 && CoordsY[i] > CoordsY[L] - 4)
+                    if (CoordsY[i] < CoordsY[L] + 2 && CoordsY[i] > CoordsY[L] - 2)
                     {
                         popularity[i]++;
                     }
@@ -607,19 +659,23 @@ namespace WIFIGUIDemo
                 double cy2 = cy0 + a * (cy1 - cy0) / dist;
 
                 // Get the points P3.
-                if((float)(cx2 + h * (cy1 - cy0) / dist)<300)
+                float x1 = (float)(cx2 + h * (cy1 - cy0) / dist);
+                float y1 = (float)(cy2 - h * (cx1 - cx0) / dist);
+                float x2 = (float)(cx2 - h * (cy1 - cy0) / dist);
+                float y2 = (float)(cy2 + h * (cx1 - cx0) / dist);
+                if (x1 < 300 && x1 > 0)
                 {
                     CoordsX.Add((float)(cx2 + h * (cy1 - cy0) / dist));
                 }
-                if((float)(cy2 - h * (cx1 - cx0) / dist)<300)
+                if(y1 < 300 && y1 > 0)
                 {
                     CoordsY.Add((float)(cy2 - h * (cx1 - cx0) / dist));
                 }
-                if((float)(cx2 - h * (cy1 - cy0) / dist)<300)
+                if(x2 < 300 && x2 > 0)
                 {
                     CoordsX.Add((float)(cx2 - h * (cy1 - cy0) / dist));
                 }
-                if((float)(cy2 + h * (cx1 - cx0) / dist)<300)
+                if(y2 < 300 && y2 > 0)
                 {
                     CoordsY.Add((float)(cy2 + h * (cx1 - cx0) / dist));
                 }
@@ -695,6 +751,21 @@ namespace WIFIGUIDemo
                     lblwantedangle.Text = flag_wantedheading.ToString();
                 }));
                 tmrangle.Enabled = true;
+            }
+        }
+        void turntoangle(double wantangle)
+        {
+            theClient.SendData(CommandID.CMDREADMag, new byte[] { });
+            System.Threading.Thread.Sleep(50);
+            double angle1 = flag_heading - wantangle;
+            double angle2 = wantangle - flag_heading;
+            if (Math.Abs(angle1) < Math.Abs(angle2))
+            {
+                turn((int)angle1);
+            }
+            else
+            {
+                turn((int)angle2);
             }
         }
         #region FORM CONTROL EVENT FUNCTIONS
@@ -804,6 +875,8 @@ namespace WIFIGUIDemo
         private void btnstopmotors_Click(object sender, EventArgs e)
         {
             stopmotors();
+            tmrangle.Enabled = false;
+            flag_rotating = false;
         }
 
         private void btngodistance_Click(object sender, EventArgs e)
@@ -881,7 +954,6 @@ namespace WIFIGUIDemo
         private void tmrMag_Tick(object sender, EventArgs e)
         {
             theClient.SendData(CommandID.CMDREADMag, new byte[] { });
-
         }
 
         private void btnsetnorth_Click(object sender, EventArgs e)
@@ -901,6 +973,8 @@ namespace WIFIGUIDemo
             flag_vortexsample = true;
             tmrangle.Enabled = true;
             chrtTmr.Enabled = true;
+            startAngle = timermaga;
+            
 
         }
 
@@ -952,20 +1026,15 @@ namespace WIFIGUIDemo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            theClient.SendData(CommandID.CMDREADMag, new byte[] { });
-            System.Threading.Thread.Sleep(50);
-            double angle1 = flag_heading - flag_northheading;
-            double angle2 = flag_northheading - flag_heading;
-            if (Math.Abs(angle1) < Math.Abs(angle2))
-            {
-                turn((int)angle1);
-            }
-            turn((int)angle2);
+            turntoangle(flag_northheading);
         }
 
         private void lightPathBtn_Click(object sender, EventArgs e)
         {
-           
+            this.BeginInvoke(new EventHandler(delegate
+            {
+                scrlspeed.Value = 80;
+            }));
 
             lightTimer.Enabled = true;
             lightTimer.Interval = 100;
@@ -974,93 +1043,128 @@ namespace WIFIGUIDemo
 
         private void lightTimer_Tick(object sender, EventArgs e)
         {
-           // int d = int.Parse(lightdTxt.Text);
-            // inward path (10 cm less every 3 turns)
-            /*  
-              if (li ==1||li==3||li==5) {
+            theClient.SendData(CommandID.CMDRDlightsensors, new byte[] { });
+            Color myColour1 = Color.FromArgb(LightReading1, LightReading1, LightReading1);
+            Color myColour2 = Color.FromArgb(LightReading2, LightReading2, LightReading2);
+            Graphics g = lightPnl.CreateGraphics();
+            Pen myPen1 = new Pen(myColour1, 10);
+            Pen myPen2 = new Pen(myColour2, 10);
+            this.BeginInvoke(new EventHandler(delegate
+            {
+                lightdTxt.Text = LightReading1.ToString();
+                lighttxt2.Text = LightReading2.ToString();
+            }));
 
-                  godistance(d);
-                  li += 1;
 
-              } else if (li == 2||li==6) {
-                  turn(90);
-                  li += 1;
-              }
-              else if (li == 4)
-              {
-                  turn(90);
-                  li += 1;
-              }
-              else if (li == 7) {
-                 d = d - 5;
-                  lightdTxt.Text = d.ToString();
-                  li = 1;
-              }
+            if (li < 1)
+            {
 
-              
-               */
-     /*?      //updown path 5o angle forward /backward
-           
-            if (li < 30)
-            {
-                setmotorspeed(80, 80);
-            }
-            else if (li < 31)
-            {
-                setmotorspeed(0, 0);
-            }
-            else if (li < 33)
-            {
-                setmotorspeed(-70, 70);
-            }
-            else if (li < 34)
-            {
-                setmotorspeed(0, 0);
-            }
-            else if (li < 35)
-            {
-                setmotorspeed(-80, -80);
+                godistance(110);
 
-            }
-            else if (li < 36)
-            {
-                setmotorspeed(0, 0);
-            }
-            else if (li < 38)
-            {
-                setmotorspeed(70,-70);
+                ly1 = 420;
+                ly3 = 420;
+                ly2 = 410;
+                ly4 = 410;
+                lx1 += 20;
+                lx2 += 20;
+                lx3 += 20;
+                lx4 += 20;
             }
             else if (li < 39)
             {
+                //read light sensors
+                // lightar1[lightarc]=LightReading1;
+                //lightar2[lightarc]=LightReading2;
+                g.DrawLine(myPen1, lx1, ly1, lx2, ly2);
+                g.DrawLine(myPen2, lx3, ly3, lx4, ly4);
+                ly1 -= 10;
+                ly2 -= 10;
+                ly3 -= 10;
+                ly4 -= 10;
+
+            }
+            else if (li < 57)
+            {
+                //do nothing
+            }
+            else if (li < 60)
+            {
+                setmotorspeed(-84, 84);
+            }
+            else if (li < 61)
+            {
                 setmotorspeed(0, 0);
             }
-            else if (li < 68)
+            else if (li < 65)
             {
                 setmotorspeed(-80, -80);
             }
-            else if (li < 69)
+            else if (li < 66)
             {
                 setmotorspeed(0, 0);
+            }
+            else if (li < 69)
+            {
+                setmotorspeed(70, -70);
+            }
+            else if (li < 70)
+            {
+                setmotorspeed(0, 0);
+                ly1 += 10;
+                ly2 += 10;
+                ly3 += 10;
+                ly4 += 10;
+
+
             }
             else if (li < 71)
             {
-
-                setmotorspeed(70, -70);
-
+                godistance(-110);
+                lx1 += 20;
+                lx2 += 20;
+                lx3 += 20;
+                lx4 += 20;
             }
-            else if (li < 72)
+            else if (li < 109)
+            {
+                //lightar1[lightarc]=LightReading1;
+                // lightar2[lightarc]=LightReading2;
+                g.DrawLine(myPen1, lx1, ly1, lx2, ly2);
+                g.DrawLine(myPen2, lx3, ly3, lx4, ly4);
+                ly1 += 10;
+                ly2 += 10;
+                ly3 += 10;
+                ly4 += 10;
+            }
+            else if (li < 126)
+            {
+                //do nothing
+            }
+            else if (li < 127)
             {
                 setmotorspeed(0, 0);
             }
-            else if (li < 73)
+            else if (li < 130)
+            {
+                setmotorspeed(100, -100);
+            }
+            else if (li < 131)
+            {
+                setmotorspeed(0, 0);
+            }
+            else if (li < 135)
             {
                 setmotorspeed(80, 80);
             }
-            else if (li < 75)
+            else if (li < 136)
+            {
+                setmotorspeed(0, 0);
+            }
+            else if (li < 139)
             {
                 setmotorspeed(-70, 70);
             }
-            else if (li < 76)
+            else if (li < 140)
             {
                 setmotorspeed(0, 0);
             }
@@ -1068,73 +1172,11 @@ namespace WIFIGUIDemo
                 li = -1;
             }
             li += 1;
+            lightarc += 1;
 
-*/
-//light path using go distance 
 
-Graphics g = lightPnl.CreateGraphics();
-Pen myPen1 = new Pen(myColour1, 10);
-Pen myPen2 = new Pen(myColour2, 10);
-Color myColour1 = Color.FromArgb(LightReading1, LightReading1, LightReading1);
-Color myColour2 = Color.FromArgb(LightReading2, LightReading2, LightReading2);
 
-if(li<0){
 
-    godistance(110);
-
-ly1=400;
-ly2=390;
-lx1+=10;
-lx2+=10;
-}else if(li<35){
-    //read light sensors
-    lightar1[lightarc]=LightReading1;
-    lightar2[lightarc]=LightReading2;
-     g.DrawLine(myPen1, lx1, ly1, x2, y2);
-     ly1-=10;
-     ly2-=10;
-}else if(li<37){
-    setmotorspeed(-70,70);
-}else if (li<38){
-    setmotorspeed(0,0);
-}else if(li<39){
-    godistance(-10);
-}else if(li<46){
-    //do nothing
-}else if (li<48){
-    setmotorspeed(70,-70);
-}else if(li<49){
-    setmotorspeed(0,0);
-}else if(li<50){
-    godistance(-110);
-    lx1+=10;
-    lx2+=10;
-}else if(li<85){
-   lightar1[lightarc]=LightReading1;
-    lightar2[lightarc]=LightReading2;
-     g.DrawLine(myPen1, lx1, ly1, x2, y2);
-     ly1+=10;
-     ly2+=10;
-}else if(li<86){
-    setmotorspeed(0,0);
-}else if(li<88){
-    setmotorspeed(70,-70);
-}else if (li<89){
-    setmotorspeed(0,0);
-}else if (li<90){
-    godistance(10);
-}else if (li<98){
-    //do nothing
-}else if (li<100){
-    setmotorspeed(-70,70);
-}else if(li<101){
-    setmotorspeed(0,0);
-}else {
-    li=-1;
-}
-li+=1;
-lightarc+=1;
-   
 
 
         }
@@ -1214,7 +1256,6 @@ lightarc+=1;
 
             }
         }
-        
 
         private void tmrearthquake_Tick(object sender, EventArgs e)
         {
@@ -1239,15 +1280,7 @@ lightarc+=1;
 
         private void btnorienteast_Click(object sender, EventArgs e)
         {
-            theClient.SendData(CommandID.CMDREADMag, new byte[] { });
-            System.Threading.Thread.Sleep(50);
-            double angle1 = flag_heading - (flag_northheading + 90);
-            double angle2 = (flag_northheading + 90) - flag_heading;
-            if (Math.Abs(angle1) < Math.Abs(angle2))
-            {
-                turn((int)angle1);
-            }
-            turn((int)angle2);
+            turntoangle(flag_northheading + 90);
         }
 
         private void label24_Click(object sender, EventArgs e)
@@ -1257,28 +1290,13 @@ lightarc+=1;
 
         private void btnorientsouth_Click(object sender, EventArgs e)
         {
-            theClient.SendData(CommandID.CMDREADMag, new byte[] { });
-            System.Threading.Thread.Sleep(50);
-            double angle1 = flag_heading - (flag_northheading + 180);
-            double angle2 = (flag_northheading + 180) - flag_heading;
-            if (Math.Abs(angle1) < Math.Abs(angle2))
-            {
-                turn((int)angle1);
-            }
-            turn((int)angle2);
+            turntoangle(flag_northheading + 180);
         }
 
         private void btnorientwest_Click(object sender, EventArgs e)
         {
-            theClient.SendData(CommandID.CMDREADMag, new byte[] { });
-            System.Threading.Thread.Sleep(50);
-            double angle1 = flag_heading - (flag_northheading - 90);
-            double angle2 = (flag_northheading - 90) - flag_heading;
-            if (Math.Abs(angle1) < Math.Abs(angle2))
-            {
-                turn((int)angle1);
-            }
-            turn((int)angle2);
+            turntoangle(flag_northheading - 90);
+           
         }
 
         private void btntestcircle_Click(object sender, EventArgs e)
@@ -1375,8 +1393,20 @@ lightarc+=1;
 
         private void chrtTmr_Tick(object sender, EventArgs e)
         {
+            
             chart1.Series[0].Points.AddXY(timerAngle, timermaga);
             timerAngle += 1;
+            double angleTbound = startAngle + 20;
+            double angleLbound = startAngle - 20;
+          
+            if ((timermaga < 150)&&(prevAngle>200)) {
+                noOfSpins += 1;
+                this.BeginInvoke(new EventHandler(delegate
+                {
+                    spinslbl.Text = noOfSpins.ToString();
+                }));
+            }
+            prevAngle = timermaga;
         }
 
         private void chrtReset_Click(object sender, EventArgs e)
@@ -1385,15 +1415,246 @@ lightarc+=1;
             timerAngle = 0; ;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btnstoreinclneangle_Click(object sender, EventArgs e)
         {
+            angleB = Math.Abs(flag_pitch);
+            this.BeginInvoke(new EventHandler(delegate
+            {
+                txtinclineangle.Text = angleB.ToString();
+            }));
+        }
+
+        private void btnstoredeclineangle_Click(object sender, EventArgs e)
+        {
+            angleD = Math.Abs(flag_pitch);
+            this.BeginInvoke(new EventHandler(delegate
+            {
+                txtdeclineangle.Text = angleD.ToString();
+            }));
+        }
+
+        private void btncalcteeter_Click(object sender, EventArgs e)
+        {
+            double f1, f2, h, h1, h2;
+            double angleM,angleMrad, angleBrad, angleDrad;
+            angleBrad = angleB * (Math.PI / 180);
+            angleDrad = angleD * (Math.PI / 180);
+            f1 = lengthL * Math.Cos(angleBrad);
+            f2 = lengthL * Math.Cos(angleDrad);
+            lengthF = (f1 + f2) / 2;
+            angleM = (180 - (angleB + angleD));
+            angleMrad = angleM * (Math.PI / 180);
+            lengthA = ((lengthF / Math.Sin(angleMrad)) * Math.Sin(angleDrad));
+            lengthC = ((lengthF / Math.Sin(angleMrad)) * Math.Sin(angleBrad));
+            h1 = lengthA * Math.Sin(angleBrad);
+            h2 = lengthC * Math.Sin(angleDrad);
+            h = (h1 + h2) / 2;
+            this.BeginInvoke(new EventHandler(delegate
+            {
+                lbllengthAval.Text = lengthA.ToString();
+                lbllengthCval.Text = lengthC.ToString();
+                lbllengthFval.Text = lengthF.ToString();
+                lbllengthHval.Text = h.ToString();
+                lblangleMval.Text = angleM.ToString();
+            }));
 
         }
 
-        private void stopPthBtn_Click(object sender, EventArgs e)
+        private void button2_Click_2(object sender, EventArgs e)
         {
+            turntoangle(flag_northheading);
+        }
+
+        private void btntravelgo_Click(object sender, EventArgs e)
+        {
+            godistance(Convert.ToInt32(txttraveldistance.Text));
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.BeginInvoke(new EventHandler(delegate
+            {
+                txtxwanted.Text = "60";
+                txtywanted.Text = "130";
+            }));
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.BeginInvoke(new EventHandler(delegate
+            {
+                txtxwanted.Text = "60";
+                txtywanted.Text = "60";
+            }));
+        }
+
+        private void picimage_Click(object sender, EventArgs e)
+        {
+            this.BeginInvoke(new EventHandler(delegate
+            {
+                txtxwanted.Text = "105";
+                txtywanted.Text = "148";
+            }));
+        }
+
+        private void picmorseaproach_Click(object sender, EventArgs e)
+        {
+            this.BeginInvoke(new EventHandler(delegate
+            {
+                txtxwanted.Text = "215";
+                txtywanted.Text = "275";
+            }));
+        }
+
+        private void teeterTmr_Tick(object sender, EventArgs e)
+        {
+            
+            if (flag_pitch < 10)
+            {
+
+                setmotorspeed(90, 90);
+            }
+           else if (pastPitch-flag_pitch > 10)
+            {
+                setmotorspeed(0,0);
+
+            }
+            
+            pastPitch = flag_pitch;
+        }
+
+        private void button2_Click_3(object sender, EventArgs e)
+        {
+            teeterTmr.Enabled = true;
+
+        }
+
+        private void picvortex_Click(object sender, EventArgs e)
+        {
+            this.BeginInvoke(new EventHandler(delegate
+            {
+                txtxwanted.Text = "222";
+                txtywanted.Text = "200";
+            }));
+        }
+
+        private void picearthquake_Click(object sender, EventArgs e)
+        {
+            this.BeginInvoke(new EventHandler(delegate
+            {
+                txtxwanted.Text = "188";
+                txtywanted.Text = "106";
+            }));
+        }
+
+        private void btnturntravel_Click(object sender, EventArgs e)
+        {
+            turntoangle(Convert.ToInt32(txttravelangle.Text));
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            theClient.SendData(CommandID.CMDGETUSGPS, new byte[] { });
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            godistance(100); //tweak to correct value
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            //turntoangle(Angle);
+        }
+
+        private void btnexitearthquake_Click(object sender, EventArgs e)
+        {
+            godistance(-100);
+        }
+
+        private void tmraccelerometer_Tick(object sender, EventArgs e)
+        {
+            if (chkaccel.Checked == true)
+            {
+                theClient.SendData(CommandID.CMDREADMMA8452, new byte[] { });
+            }
+            if(flag_travelling == 1 || flag_travelling ==2)
+            {
+                this.BeginInvoke(new EventHandler(delegate
+                {
+                    chktravelling.Checked = true;
+                }));
+            }else
+            {
+                this.BeginInvoke(new EventHandler(delegate
+                {
+                    chktravelling.Checked = false;
+                }));
+            }
+            if (flag_rotating == true)
+            {
+                this.BeginInvoke(new EventHandler(delegate
+                {
+                    chkturning.Checked = true;
+                }));
+            }
+            else
+            {
+                this.BeginInvoke(new EventHandler(delegate
+                {
+                    chkturning.Checked = false;
+                }));
+            }
+
+        }
+
+        private void btnorientexitvortex_Click(object sender, EventArgs e)
+        {
+            turntoangle(167);
+        }
+
+        private void btnexitvortex_Click(object sender, EventArgs e)
+        {
+            godistance(125);
+        }
+
+        private void btnorientvortexon_Click(object sender, EventArgs e)
+        {
+            turntoangle(344);
+        }
+
+        private void btnentervortex_Click(object sender, EventArgs e)
+        {
+            godistance(125);
+        }
+
+        private void btncalculatepath_Click(object sender, EventArgs e)
+        {
+            int wantedangle2;
+            int xdist = (Int32.Parse(txtxwanted.Text) - x_coord);
+            int ydist = (Int32.Parse(txtywanted.Text) - y_coord);
+            double calcbearing;
+            int wanteddistance;
+            theClient.SendData(CommandID.CMDREADMag, new byte[] { });
+            System.Threading.Thread.Sleep(50);
+            calcbearing = (Math.Atan2(ydist,xdist) / (Math.PI / 180));
+            wantedangle2 = (int)(flag_northheading+(90-calcbearing));
+            if (wantedangle2 >=360)
+            {
+                wantedangle2 = wantedangle2 - 360;
+            }
+            wanteddistance = (int)Math.Sqrt((Math.Pow(xdist,2)) + Math.Pow(ydist,2));
+            this.BeginInvoke(new EventHandler(delegate
+            {
+                txttraveldistance.Text = wanteddistance.ToString();
+                txttravelangle.Text = wantedangle2.ToString();
+            }));
+        }
+
+        private void stopPth_Click(object sender, EventArgs e)
+        {
+            lightTimer.Enabled=false;
             setmotorspeed(0, 0);
-            lightTimer.Enabled = false;
         }
     }
 }
